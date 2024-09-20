@@ -24,6 +24,7 @@ contract Mapping {
         require(!IsRegistered(), "user registered before.");
         
         // Eğer kayıtlı değilse, kullanıcının adresini registered mapping'e ekler ve true yapar.
+        // Köşeli parantezler [], Solidity’deki mapping veri yapısının anahtar-değer (key-value) erişimini ifade eder.
         registered[msg.sender] = true;
         
         // Kullanıcının favori sayısını favNums mapping'ine ekler.
