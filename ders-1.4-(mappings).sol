@@ -26,6 +26,7 @@ contract Mapping {
         // Eğer kayıtlı değilse, kullanıcının adresini registered mapping'e ekler ve true yapar.
         // Köşeli parantezler [], Solidity’deki mapping veri yapısının anahtar-değer (key-value) erişimini ifade eder.
         registered[msg.sender] = true;
+        //  msg.sender adresini registered mapping’inde anahtar olarak kullanarak o anahtara karşılık gelen değeri true olarak ayarlar.
         
         // Kullanıcının favori sayısını favNums mapping'ine ekler.
         favNums[msg.sender] = _favNum;
