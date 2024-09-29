@@ -1,0 +1,74 @@
+1. Proje Başlatma
+forge init projenin adi
+
+2. Proje Derleme
+forge build
+
+3. Testleri Çalıştırma daha
+forge test                 
+
+4. Derleme Hatalarını ve Uyarıları Gösterme
+forge build --verbose
+
+5. Çıktı Klasörünü Temizleme
+rm -rf out
+
+6. Belirli Bir Testi Çalıştırma
+forge test --path test/test_EasyMath.sol
+
+7. Test Sonuçlarını Detaylı Görüntüleme
+forge test -vvvv
+
+8. Yalnızca Belirli Bir Test Fonksiyonunu Çalıştırma
+forge test -m testEasy
+
+9. Hata Mesajlarını Gözden Geçirme
+forge test --trace
+
+10. Kontratları Deploy Etme
+forge script script/YourScript.s.sol --broadcast
+
+11. Yazılımları Güncelleme
+foundryup
+
+12. kutuphane ekleme
+forge install OpenZeppelin/openzeppelin-contracts
+      remove da siler
+
+13. foundry importlari
+forge remappings > remappings.txt
+
+foundry kurulum komutlari 
+
+ Foundry’nin İndirimi
+curl -L https://foundry.paradigm.xyz | bash
+
+PATH Ayarları
+foundryup
+
+Kurulumu Kontrol Etme
+forge --version
+
+
+Terminal Komutları ile Dolaşma
+
+a. Mevcut Dizini Görüntüleme
+pwd
+
+b. Dizinleri Listeleme
+ls
+
+Daha ayrıntılı bir listeleme için:
+ls -la
+
+c. Dizin Değiştirme
+cd <dizin_adı>
+
+Ana dizine geri dönmek için:
+cd ..
+
+d. Belirli Bir Dosyaya Gitme
+Belirli bir dosyaya gitmek için dizin yolunu belirtin: ornek cd src/test
+
+5. Terminalde Gezinme İçin Pratik İpuçları
+forge --help
