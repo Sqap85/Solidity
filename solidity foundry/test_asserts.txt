@@ -1,0 +1,161 @@
+
+assertTrue
+function assertTrue(bool condition) internal;
+Asserts the condition is true.
+
+Example
+bool success = contract.fun();
+assertTrue(success);
+
+assertEq
+function assertEq(<type> a, <type> b) internal;
+Where <type> can be address, bytes32, int, uint
+
+Asserts a is equal to b.
+
+Example
+uint256 a = 1 ether;
+uint256 b = 1e18 wei;
+assertEq(a, b);
+
+assertEqDecimal
+function assertEqDecimal(<type> a, <type> b, uint decimals) internal;
+Where <type> can be int, uint
+
+Asserts a is equal to b.
+
+Example
+uint256 a = 1 ether;
+uint256 b = 1e18 wei;
+assertEqDecimal(a, b, 18);
+
+assertEq32
+function assertEq32(bytes32 a, bytes32 b) internal;
+Asserts a is equal to b.
+
+Example
+assertEq(bytes32("abcd"), 0x6162636400000000000000000000000000000000000000000000000000000000);
+
+assertEq0
+function assertEq0(bytes a, bytes b) internal;
+Asserts a is equal to b.
+
+Example
+string memory name1 = "Alice";
+string memory name2 = "Bob";
+assertEq0(bytes(name1), bytes(name2)); // [FAIL]
+
+assertGt
+function assertGt(<type> a, <type> b) internal;
+Where <type> can be int, uint
+
+Asserts a is greater than b.
+
+Example
+uint256 a = 2 ether;
+uint256 b = 1e18 wei;
+assertGt(a, b);
+
+assertGtDecimal
+function assertGtDecimal(<type> a, <type> b, uint decimals) internal;
+Where <type> can be int, uint
+
+Asserts a is greater than b.
+
+Example
+uint256 a = 2 ether;
+uint256 b = 1e18 wei;
+assertGtDecimal(a, b, 18);
+
+assertGe
+function assertGe(<type> a, <type> b) internal;
+Where <type> can be int, uint
+
+Asserts a is greater than or equal to b.
+
+Example
+uint256 a = 1 ether;
+uint256 b = 1e18 wei;
+assertGe(a, b);
+
+assertGeDecimal
+function assertGeDecimal(<type> a, <type> b, uint decimals) internal;
+Where <type> can be int, uint
+
+Asserts a is greater than or equal to b.
+
+Example
+uint256 a = 1 ether;
+uint256 b = 1e18 wei;
+assertGeDecimal(a, b, 18);
+
+assertLt
+function assertLt(<type> a, <type> b) internal;
+Where <type> can be int, uint
+
+Asserts a is lesser than b.
+
+Example
+uint256 a = 1 ether;
+uint256 b = 2e18 wei;
+assertLt(a, b);
+
+assertLtDecimal
+function assertLtDecimal(<type> a, <type> b, uint decimals) internal;
+Where <type> can be int, uint
+
+Asserts a is lesser than b.
+
+Example
+uint256 a = 1 ether;
+uint256 b = 2e18 wei;
+assertLtDecimal(a, b, 18);
+
+assertLe
+function assertLe(<type> a, <type> b) internal;
+Where <type> can be int, uint
+
+Asserts a is lesser than or equal to b.
+
+Example
+uint256 a = 1 ether;
+uint256 b = 1e18 wei;
+assertLe(a, b);
+
+assertLeDecimal
+function assertLeDecimal(<type> a, <type> b, uint decimals) internal;
+Where <type> can be int, uint
+
+Asserts a is lesser than or equal to b.
+
+Example
+uint256 a = 1 ether;
+uint256 b = 1e18 wei;
+assertLeDecimal(a, b, 18);
+
+assertApproxEqAbs
+function assertApproxEqAbs(<type> a, <type> b, uint256 maxDelta) internal;
+Where <type> can be int, uint
+
+Asserts a is approximately equal to b with delta in absolute value.
+
+Example
+function testFail () external {
+    uint256 a = 100;
+    uint256 b = 200;
+
+    assertApproxEqAbs(a, b, 90);
+}
+
+assertApproxEqRel
+function assertApproxEqRel(<type> a, <type> b, uint256 maxPercentDelta) internal;
+Where <type> can be int, uint
+
+Asserts a is approximately equal to b with delta in percentage, where 1e18 is 100%.
+
+Example
+function testFail () external {
+    uint256 a = 100;
+    uint256 b = 200;
+    assertApproxEqRel(a, b, 0.4e18);
+}

@@ -1,0 +1,83 @@
+
+1. vm.roll
+
+Açıklama: Blockchain üzerindeki mevcut blok numarasını değiştirir.
+vm.roll(uint256 newBlockNumber);
+
+2. vm.warp
+
+Açıklama: Blockchain’deki mevcut zaman damgasını (timestamp) değiştirir.
+vm.warp(uint256 newTimestamp);
+
+3. vm.prank
+
+Açıklama: Bir sonraki işlemde başka bir adresi msg.sender olarak ayarlamak için kullanılır. Bu sayede test sırasında farklı kullanıcıların işlemleri taklit edilebilir.
+vm.prank(address sender);
+
+4. vm.expectRevert
+
+Açıklama: Bir sonraki işlemin revert ile sonuçlanacağını bekler. Bu, revert testleri için kullanışlıdır.
+vm.expectRevert(); // herhangi bir revert
+vm.expectRevert(bytes("Revert reason")); // belirli bir revert sebebiyle
+
+5. vm.startPrank ve vm.stopPrank
+
+Açıklama: Birden fazla işlemi başka bir msg.sender ile yapmak istiyorsanız, startPrank ve stopPrank kullanabilirsiniz.
+vm.startPrank(address sender);
+// Burada işlemler
+vm.stopPrank();
+
+6. vm.deal
+
+Açıklama: Belirtilen adrese istenen miktarda Ether verir. Bu, bir kullanıcının cüzdanına Ether yüklemek için kullanılır.
+vm.deal(address who, uint256 amount);
+
+7. vm.label
+
+Açıklama: Test sırasında daha anlaşılır hata mesajları elde etmek için belirli adreslere etiket atamak için kullanılır.
+vm.label(address addr, string memory label);
+
+8. vm.expectEmit
+
+Açıklama: Bir sonraki işlemde belirli bir event’in yayımlanmasını bekler. Bu sayede event yayını doğrulanabilir.
+vm.expectEmit(bool checkTopic1, bool checkTopic2, bool checkTopic3, bool checkData);
+
+9. vm.recordLogs ve vm.getRecordedLogs
+
+Açıklama: İşlemler sırasında yayımlanan tüm logları yakalar ve sonradan logları incelemek için kullanılır.
+vm.recordLogs();
+logs = vm.getRecordedLogs();
+
+10. vm.store
+
+Açıklama: Belirli bir contract üzerindeki storage slot’larını manuel olarak değiştirmek için kullanılır.
+vm.store(address contractAddress, bytes32 slot, bytes32 value);
+
+11. vm.sign
+
+Açıklama: Belirli bir özel anahtar ile veriyi imzalar.
+(uint8 v, bytes32 r, bytes32 s) = vm.sign(uint256 privateKey, bytes32 hash);
+
+12. vm.mockCall
+
+Açıklama: Bir kontratın belirli bir çağrısının sahte (mock) yanıt döndürmesini sağlar.
+vm.mockCall(
+  address where, 
+  bytes calldata input, 
+  bytes calldata output
+);
+
+13. vm.clearMockedCalls
+
+Açıklama: Daha önce ayarlanan tüm mock çağrılarını temizler.
+vm.clearMockedCalls();
+
+14. vm.assume
+
+Açıklama: Belirtilen şartların doğru olduğunu varsayar. Bu, fuzz testleri sırasında kullanılabilir.
+vm.assume(bool condition);
+
+15. vm.fuzz
+
+Açıklama: Parametrelerin çeşitli kombinasyonlarını rastgele test etmek için kullanılır.
+Kullanım: Fuzz testing sırasında otomatik olarak kullanılır.
