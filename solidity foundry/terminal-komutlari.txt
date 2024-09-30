@@ -14,7 +14,9 @@ forge build --verbose
 rm -rf out
 
 6. Belirli Bir Testi Çalıştırma
-forge test --path test/test_EasyMath.sol
+forge test --path test/<isim>
+veya
+forge test --match-contract <ismi>
 
 7. Test Sonuçlarını Detaylı Görüntüleme
 forge test -vvvv
