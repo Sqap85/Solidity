@@ -52,6 +52,15 @@ contract Example {
         return address(this).balance;
     }
 
+ // Çoklu değer döndüren fonksiyon
+    function getValues() public pure returns (uint, string memory, bool) {
+        uint number = 42;
+        string memory message = "Hello, Solidity!";
+        bool isActive = true;
+
+        return (number, message, isActive);
+    }
+
 // 4. Fallback ve Receive Fonksiyonları
 
 // Solidity’de receive ve fallback fonksiyonları, sözleşmenin bilinmeyen fonksiyon çağrıları veya Ether transferlerinde nasıl davranacağını belirler.
