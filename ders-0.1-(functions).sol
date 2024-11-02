@@ -66,7 +66,7 @@ contract Example {
         owner = msg.sender; // Sözleşme oluşturulduğunda sahibini belirler
     }
 
-    //// onlyOwner Modifikasyonu: Genellikle bir sözleşme sahibinin belirli işlemleri gerçekleştirebilmesi için kullanılır
+    // onlyOwner Modifikasyonu: Genellikle bir sözleşme sahibinin belirli işlemleri gerçekleştirebilmesi için kullanılır
     modifier onlyOwner() {
         require(msg.sender == owner, "You are not the owner"); // Sadece sözleşme sahibi erişebilir
         _; // Modifikatörün kullanıldığı yeri belirtir
