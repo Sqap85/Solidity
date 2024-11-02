@@ -95,4 +95,12 @@ contract Example {
     function restrictedFunction() public onlyOwner {
         // işlem yapılır
     }
+
+// selfdestruct kullanmazsan kontrat yok olamaz (Kullanim amaci guncellemelerle degisebilir bunu yazdigimda kontrati siler ve icindeki bakiyeyi belirlenen adrese gonderir.)
+/* Sadece sahibi tarafından çağrılabilecek bir selfdestruct fonksiyonu
+    function destroyContract() public onlyOwner {
+
+        // selfdestruct ile kontratı yok et ve kontrat bakiyesini belirtilen adrese gönder
+        selfdestruct(payable(owner));
+    } */
 }
