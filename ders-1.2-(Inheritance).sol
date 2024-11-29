@@ -29,14 +29,14 @@ contract B is A{
 
 contract Human{
     function sayHello() public pure virtual returns (string memory){
-        return "85 is big but you are not member pussy";
+        return "The 85 is biggest but you are not member pussy";
     }
 }
     //          Human contratini miras aldik
 contract superHuman is Human {
 
     function sayHello() public pure override returns(string memory){
-        return "85 is biggest amcik! you are a member!";
+        return "The 85 is biggest amcik! you are a member!";
     }
 
     function welcomeMsg(bool isMember) public pure returns (string memory){
